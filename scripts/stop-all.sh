@@ -1,1 +1,1 @@
-docker container stop $(docker container ls -aq)
+sudo docker container stop $(docker container ls -aq)
