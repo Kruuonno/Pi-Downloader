@@ -1,5 +1,5 @@
 ######## NZBGet ##############
----
+
 version: "2.1"
 services:
   nzbget:
@@ -16,7 +16,7 @@ services:
       - 6789:6789
     restart: unless-stopped
 ########## Sonarr #################
----
+
 version: "2.1"
 services:
   sonarr:
@@ -34,7 +34,7 @@ services:
       - 8989:8989
     restart: unless-stopped
 ############ Radarr ###################
----
+
 version: "2.1"
 services:
   radarr:
@@ -52,7 +52,7 @@ services:
       - 7878:7878
     restart: unless-stopped
 ############ Lidarr #####################
----
+
 version: "2.1"
 services:
   lidarr:
