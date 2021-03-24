@@ -1,0 +1,6 @@
+alias LMDS_up="docker-compose -f ~/LMDS/docker-compose.yml up -d"
+alias LMDS_down="docker-compose -f ~/LMDS/docker-compose.yml down"
+alias LMDS_start="docker-compose -f ~/LMDS/docker-compose.yml start"
+alias LMDS_stop="docker-compose -f ~/LMDS/docker-compose.yml stop"
+alias LMDS_update="docker-compose -f ~/LMDS/docker-compose.yml pull"
+alias LMDS_build="docker-compose -f ~/LMDS/docker-compose.yml build"
