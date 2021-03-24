@@ -9,9 +9,9 @@ services:
       - PGID=1000
       - TZ=America/Los_Angeles
     volumes:
-      - /mnt/dietpi_userdata/config/sonarr:/config
-      - /mnt/dietpi_userdata/tvseries:/tv
-      - /mnt/dietpi_userdata/downloadclient-downloads:/downloads
+      - /mnt/downloader/config/sonarr:/config
+      - /mnt/downloader/tvseries:/tv
+      - /mnt/downloader/downloadclient-downloads:/downloads
     ports:
       - 8989:8989
     restart: unless-stopped
