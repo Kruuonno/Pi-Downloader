@@ -1,1 +1,1 @@
-docker image prune -a
+sudo docker image prune -a
