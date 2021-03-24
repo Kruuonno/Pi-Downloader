@@ -156,13 +156,13 @@ fi
 mainmenu_selection=$(whiptail --title "Main Menu" --menu --notags \
 	"" 20 78 12 -- \
 	"install" "Install Docker" \
-	"build" "Build LMDS Stack" \
+	"build" "Build Pi-Downloader- Stack" \
 	"commands" "Docker commands" \
 	"misc" "Miscellaneous commands" \
-	"update" "Update LMDS Stack" \
-	"backup" "Backup and Restore LMDS" \
+	"update" "Update Pi-Downloader- Stack" \
+	"backup" "Backup and Restore Pi-Downloader-" \
 	3>&1 1>&2 2>&3)
-# "backup" "Backup LMDS - (external scripts)" \
+# "backup" "Pi-Downloader- - (external scripts)" \
 
 
 case $mainmenu_selection in
@@ -275,7 +275,7 @@ case $mainmenu_selection in
 	docker_selection=$(
 		whiptail --title "Docker commands" --menu --notags \
 			"Shortcut to common docker commands" 20 78 12 -- \
-			"aliases" "Add LMDS_up and LMDS_down aliases" \
+			"aliases" "Add PD_up and PD_down aliases" \
 			"start" "Start stack" \
 			"restart" "Restart stack" \
 			"stop" "Stop stack" \
@@ -296,8 +296,8 @@ case $mainmenu_selection in
 	"prune_images") ./scripts/prune-images.sh ;;
 	"aliases")
 		touch ~/.bash_aliases
-		if [ $(grep -c 'LMDS' ~/.bash_aliases) -eq 0 ]; then
-			echo ". ~/LMDS/.bash_aliases" >>~/.bash_aliases
+		if [ $(grep -c 'PD' ~/.bash_aliases) -eq 0 ]; then
+			echo ". ~/PD/.bash_aliases" >>~/.bash_aliases
 			echo "added aliases"
 		else
 			echo "aliases already added"
@@ -310,11 +310,11 @@ case $mainmenu_selection in
 	#Backup menu ---------------------------------------------------------------------
 "backup")
 	backup_selection=$(
-		whiptail --title "Backup and Restore LMDS" --menu --notags \
+		whiptail --title "Backup and Restore Pi-Downloader-" --menu --notags \
 			"While configuring rclone to work with Google Drive (option 12), make sure you give a folder name of (gdrive). Be carefull when you restore from backup. All containers will be stop and their settings overwritten with what is in your last backup file. All containers will start automatically after restore is done." 20 78 12 -- \
 			"rclone" "Install rclone and configure (gdrive) for backup" \
-			"rclone_backup" "Backup LMDS" \
-			"rclone_restore" "Restore LMDS" \
+			"rclone_backup" "Backup Pi-Downloader-" \
+			"rclone_restore" "Restore Pi-Downloader-" \
 			3>&1 1>&2 2>&3
 	)
 
