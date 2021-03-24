@@ -1,40 +1,4 @@
-######## NZBGet ##############
-
-version: "2.1"
-services:
-  nzbget:
-    image: ghcr.io/linuxserver/nzbget
-    container_name: nzbget
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Los_Angeles
-    volumes:
-      - /mnt/dietpi_userdata/config/nzbget:/config
-      - /mnt/dietpi_userdata/downloads:/downloads
-    ports:
-      - 6789:6789
-    restart: unless-stopped
-########## Sonarr #################
-
-version: "2.1"
-services:
-  sonarr:
-    image: ghcr.io/linuxserver/sonarr
-    container_name: sonarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Los_Angeles
-    volumes:
-      - /mnt/dietpi_userdata/config/sonarr:/config
-      - /mnt/dietpi_userdata/tvseries:/tv
-      - /mnt/dietpi_userdata/downloadclient-downloads:/downloads
-    ports:
-      - 8989:8989
-    restart: unless-stopped
-############ Radarr ###################
-
+---
 version: "2.1"
 services:
   radarr:
@@ -45,27 +9,9 @@ services:
       - PGID=1000
       - TZ=America/Los_Angeles
     volumes:
-      - /mnt/dietpi_userdata/config/radarr:/config
-      - /mnt/dietpi_userdata/movies:/movies
-      - /mnt/dietpi_userdata/downloadclient-downloads:/downloads
+      - /mnt/downloader/config/radarr:/config
+      - /mnt/downloader/movies:/movies
+      - /mnt/downloader/downloadclient-downloads:/downloads
     ports:
       - 7878:7878
-    restart: unless-stopped
-############ Lidarr #####################
-
-version: "2.1"
-services:
-  lidarr:
-    image: ghcr.io/linuxserver/lidarr
-    container_name: lidarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Los_Angeles
-    volumes:
-      - /mnt/dietpi_userdata/config:/config
-      - /mnt/dietpi_userdata/music:/music
-      - /mnt/dietpi_userdata/downloads:/downloads
-    ports:
-      - 8686:8686
     restart: unless-stopped
