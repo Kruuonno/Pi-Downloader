@@ -1,0 +1,16 @@
+---
+version: "2.1"
+services:
+  mylar3:
+    image: ghcr.io/linuxserver/mylar3
+    container_name: mylar3
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /path/to/data:/config
+      - /path/to/comics:/comics
+      - /path/to/downloads:/downloads
+    ports:
+      - 8090:8090
+    restart: unless-stopped
