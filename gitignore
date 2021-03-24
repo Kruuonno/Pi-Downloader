@@ -1,0 +1,15 @@
+#ignore data folders for containers
+/services/
+/volumes/
+/backups/
+/media/
+/Downloads/
+/downloads/
+/Movies/
+/Music/
+/TVseries/
+/TransmissionWathFolder/
+/TVrecordings/
+docker-compose.yml
+.outofdate
+downloads
