@@ -8,7 +8,7 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /mnt/downloader/config:/config
+      - /mnt/downloader/config/mylar:/config
       - /mnt/downloader/comics:/comics
       - /mnt/downloader:/downloads
     ports:
