@@ -287,13 +287,13 @@ case $mainmenu_selection in
 	)
 
 	case $docker_selection in
-	"start") sudo ./scripts/start.sh ;;
-	"stop") sudo ./scripts/stop.sh ;;
-	"stop_all") sudo ./scripts/stop-all.sh ;;
-	"restart") sudo ./scripts/restart.sh ;;
-	"pull") sudo ./scripts/update.sh ;;
-	"prune_volumes") sudo ./scripts/prune-volumes.sh ;;
-	"prune_images") sudo ./scripts/prune-images.sh ;;
+	"start") ./scripts/start.sh ;;
+	"stop") ./scripts/stop.sh ;;
+	"stop_all") ./scripts/stop-all.sh ;;
+	"restart") ./scripts/restart.sh ;;
+	"pull") ./scripts/update.sh ;;
+	"prune_volumes") ./scripts/prune-volumes.sh ;;
+	"prune_images") ./scripts/prune-images.sh ;;
 	"aliases")
 		touch ~/.bash_aliases
 		if [ $(grep -c 'PD' ~/.bash_aliases) -eq 0 ]; then

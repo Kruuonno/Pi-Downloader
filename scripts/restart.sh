@@ -1,1 +1,1 @@
-sudo docker-compose restart
+docker-compose restart

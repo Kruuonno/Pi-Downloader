@@ -1,2 +1,2 @@
-sudo docker system prune --volumes
+docker system prune --volumes
 
