@@ -287,6 +287,7 @@ case $mainmenu_selection in
 	)
 
 	case $docker_selection in
+	"update-upgradeOS") ./scripts/updateOS.sh;;
 	"start") ./scripts/start.sh ;;
 	"stop") ./scripts/stop.sh ;;
 	"stop_all") ./scripts/stop-all.sh ;;
