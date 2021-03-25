@@ -4,7 +4,7 @@
     environment:
       - PUID=0
       - PGID=0
-      - TZ=Europe/London
+      - TZ=America/Los_Angeles
       - UMASK_SET=022 #optional
     volumes:
       - ./volumes/radarr/config:/config
