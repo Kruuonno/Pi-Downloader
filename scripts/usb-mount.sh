@@ -1,5 +1,5 @@
 #sudo umount /dev/sdb1
-sudo -i
+#sudo -i
 grep -q 'data' /etc/fstab || 
 printf '# data\n/dev/sdb1    /home/pi/data    ext4    defaults    0    2\n' >> /etc/fstab
 exit
