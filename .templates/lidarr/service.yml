@@ -7,8 +7,8 @@
       - TZ=Europe/London
       - UMASK_SET=022 #optional
     volumes:
-      - ./volumes/lidarr/config:/config
-      - ./media/music:/music
-      - ./downloads:/downloads
+      - /home/pi/data/appdata/lidarr/config:/config
+      - /home/pi/data/media/music:/music
+      - /home/pi/data/downloads:/downloads
     ports:
       - 8686:8686
