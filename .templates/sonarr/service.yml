@@ -7,9 +7,9 @@
       - TZ=America/Los_Angeles
       - UMASK_SET=022 #optional
     volumes:
-      - ./volumes/sonarr/data:/config
-      - ./media/tvshows:/tv
-      - ./downloads:/downloads
+      - /home/pi/data/appdata/sonarr/data:/config
+      - /home/pi/data/media/tvshows:/tv
+      - /home/pi/data/downloads:/downloads
     ports:
       - 8989:8989
     restart: unless-stopped
