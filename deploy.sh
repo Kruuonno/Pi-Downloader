@@ -276,7 +276,7 @@ case $mainmenu_selection in
 		whiptail --title "Docker commands" --menu --notags \
 			"Shortcut to common docker commands" 20 78 12 -- \
 			"aliases" "Add PD_up and PD_down aliases" \
-			"USB HDD - dev/sdb2" \
+			"usb" "USB HDD - dev/sdb2" \
 			"update-upgradeOS" "Upgrade OS" \
 			"start" "Start stack" \
 			"restart" "Restart stack" \
