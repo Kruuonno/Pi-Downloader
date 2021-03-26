@@ -155,7 +155,7 @@ fi
 # Display main menu
 mainmenu_selection=$(whiptail --title "Main Menu" --menu --notags \
 	"" 20 78 12 -- \
-	"install" "Install Docker" \
+	"install" "Install Docker - Docker-Compose" \
 	"build" "Build Pi-Downloader- Stack" \
 	"commands" "Docker commands" \
 	"misc" "Miscellaneous commands" \
