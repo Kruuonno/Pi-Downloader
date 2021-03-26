@@ -7,9 +7,9 @@
       - TZ=America/Los_Angeles
       - UMASK_SET=022 #optional
     volumes:
-      - ./volumes/bazarr/config:/config
-      - ./media/movies:/movies
-      - ./media/tvshows:/tv
+      - /home/pi/data/appdata/bazarr/config:/config
+      - /home/pi/data/media/movies:/movies
+      - /home/pi/data/media/tvshows:/tv
     ports:
       - 6767:6767
     restart: unless-stopped
