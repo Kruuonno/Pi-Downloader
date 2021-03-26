@@ -289,7 +289,7 @@ case $mainmenu_selection in
 	)
 
 	case $docker_selection in
-	"usb") ./scripts/usb-mount.sh;;
+	"usb") sudo ./scripts/usb-mount.sh;;
 	"update-upgradeOS") ./scripts/updateOS.sh;;
 	"start") ./scripts/start.sh ;;
 	"stop") ./scripts/stop.sh ;;
