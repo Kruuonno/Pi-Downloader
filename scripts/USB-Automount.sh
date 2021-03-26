@@ -40,31 +40,7 @@ function set_type {
 	
 	m_type=$(sudo blkid -o value -s TYPE $1)
 	
-	#case 
-(
-s
-u
-d
-o
-b
-l
-k
-i
-d
-−
-o
-v
-a
-l
-u
-e
-−
-s
-T
-Y
-P
-E
-1) in
+	#case $(sudo blkid -o value -s TYPE $1) in
 	#	"ntfs" ) echo "preparing NTFS";;
 	#	* ) echo "Everything else";;
 	#esac
@@ -122,33 +98,8 @@ createmenu ()
 			break;
 		elif [ 1 -le "$REPLY" ] && [ "$REPLY" -le $(($#-1)) ];
 		then
-			#echo "You selected 
-o
-p
-t
-i
-o
-n
-w
-h
-i
-c
-h
-i
-s
-o
-p
-t
-i
-o
-n
-REPLY"
-			m_uuid=$(echo $option | sed -e "s/^.*
-(
-.
-∗
-)
-.*$/\2/")
+			#echo "You selected $option which is option $REPLY"
+			m_uuid=$(echo $option | sed -e "s/^.*\((\)\(.*\)\()\).*$/\2/")
 			#echo "Selected UUID: $m_uuid"
 			ask_sure $option
 			break;
@@ -164,15 +115,7 @@ function select_device {
 	for DEVICE in $(sudo blkid -o device); do
 		LABEL=$(sudo blkid -o value -s LABEL $DEVICE)
 		UUID=$(sudo blkid -o value -s UUID $DEVICE)
-		#echo "
-D
-E
-V
-I
-C
-E
-=
-LABEL ($UUID)"
+		#echo "$DEVICE = $LABEL ($UUID)"
 		devices_list[i]="$DEVICE = $LABEL ($UUID)"
 		let i++
 	done
