@@ -48,8 +48,8 @@ docker_setfacl() {
 	[ -d ./Pi-Downloader-Backups ] || sudo mkdir /home/pi/data/Pi-Downloader-Backups
 
 	#give current user rwx on the volumes and backups
-	[ $(getfacl /home/pi/data/volumes | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx ./volumes
-	[ $(getfacl /home/pi/data/Pi-Downloader-Backups | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx ./Pi-Downloader-Backups
+	[ $(getfacl /home/pi/data/volumes | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx /home/pi/data/volumes
+	[ $(getfacl /home/pi/data/Pi-Downloader-Backups | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx /home/pi/data/Pi-Downloader-Backups
 }
 
 #future function add password in build phase
@@ -128,7 +128,7 @@ function yml_builder() {
 	fi
 
 	#make sure terminal.sh is executable
-	[ -f ./services/$1/terminal.sh ] && chmod +x ./services/$1/terminal.sh
+	[ -f /home/pi/data/services/$1/terminal.sh ] && chmod +x /home/pi/data/services/$1/terminal.sh
 
 }
 
@@ -217,8 +217,8 @@ case $mainmenu_selection in
 		entry_options+=("${cont_array[$index]}")
 
 		#check selection
-		if [ -f ./services/selection.txt ]; then
-			[ $(grep "$index" ./services/selection.txt) ] && entry_options+=("ON") || entry_options+=("OFF")
+		if [ -f /home/pi/data/services/selection.txt ]; then
+			[ $(grep "$index" /home/pi/data/services/selection.txt) ] && entry_options+=("ON") || entry_options+=("OFF")
 		else
 			entry_options+=("OFF")
 		fi
@@ -239,21 +239,21 @@ case $mainmenu_selection in
 		#docker_setfacl
 
 		# store last sellection
-		[ -f ./services/selection.txt ] && rm ./services/selection.txt
+		[ -f /home/pi/data/services/selection.txt ] && rm /home/pi/data/services/selection.txt
 		#first run service directory wont exist
-		[ -d ./services ] || mkdir services
-		touch ./services/selection.txt
+		[ -d /home/pi/data/services ] || mkdir services
+		touch /home/pi/data/services/selection.txt
 		#Run yml_builder of all selected containers
 		for container in "${containers[@]}"; do
 			echo "Adding $container container"
 			yml_builder "$container"
-			echo "$container" >>./services/selection.txt
+			echo "$container" >>/home/pi/data/services/selection.txt
 		done
 
 		# add custom containers
-		if [ -f ./services/custom.txt ]; then
+		if [ -f /home/pi/data/services/custom.txt ]; then
 			if (whiptail --title "Custom Container detected" --yesno "custom.txt has been detected do you want to add these containers to the stack?" 20 78); then
-				mapfile -t containers <<<$(cat ./services/custom.txt)
+				mapfile -t containers <<<$(cat /home/pi/data/services/custom.txt)
 				for container in "${containers[@]}"; do
 					echo "Adding $container container"
 					yml_builder "$container"
