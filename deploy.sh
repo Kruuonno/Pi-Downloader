@@ -73,7 +73,7 @@ function yml_builder() {
 
 	service="services/$1/service.yml"
 
-	[ -d ./services/ ] || mkdir ./services/
+	[ -d ./services/ ] || sudo mkdir /home/pi/data/services/
 
 		if [ -d ./data/services/$1 ]; then
 			#directory already exists prompt user to overwrite
