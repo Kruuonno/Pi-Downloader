@@ -9,9 +9,9 @@
 #      - USER=username #optional
 #      - PASS=password #optional
     volumes:
-      - ./volumes/transmission/config:/config
-      - ./downloads:/downloads
-      - ./downloads/TransmissionWathFolder:/watch
+      - /home/pi/data/appdata/transmission/config:/config
+      - /home/pi/data/downloads:/downloads
+      - /home/pi/data/downloads/TransmissionWathFolder:/watch
     ports:
       - 9091:9091
       - 51413:51413
