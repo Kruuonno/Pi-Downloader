@@ -48,8 +48,8 @@ docker_setfacl() {
 	[ -d ./Pi-Downloader-Backups ] || sudo mkdir /home/pi/data/Pi-Downloader-Backups
 
 	#give current user rwx on the volumes and backups
-	[ $(getfacl ./volumes | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx ./volumes
-	[ $(getfacl ./Pi-Downloader-Backups | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx ./Pi-Downloader-Backups
+	[ $(getfacl /home/pi/data/volumes | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx ./volumes
+	[ $(getfacl /home/pi/data/Pi-Downloader-Backups | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx ./Pi-Downloader-Backups
 }
 
 #future function add password in build phase
