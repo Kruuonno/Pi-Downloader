@@ -9,7 +9,7 @@
     volumes:
       - /home/pi/data/appdata/radarr/config:/config
       - /home/pi/data/media/movies:/movies
-      - /home/pi/data/downloads:/downloads
+      - /home/pi/data/downloads/completed/Movies:/downloads
     ports:
       - 7878:7878
     restart: unless-stopped
