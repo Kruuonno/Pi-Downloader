@@ -9,6 +9,6 @@
     volumes:
       - /home/pi/data/appdata/lidarr/config:/config
       - /home/pi/data/media/music:/music
-      - /home/pi/data/downloads:/downloads
+      - /home/pi/data/downloads/completed/Music:/downloads
     ports:
       - 8686:8686
