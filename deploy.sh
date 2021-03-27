@@ -168,7 +168,7 @@ mainmenu_selection=$(whiptail --title "Main Menu" --menu --notags \
 	"commands" "Docker commands" \
 	"misc" "Miscellaneous commands" \
 	"update" "Update Docker Stack" \
-	"backup" "Backup and Restore LMDS" \
+	"backup" "Backup and Restore Server" \
 	3>&1 1>&2 2>&3)
 # "backup" "Backup LMDS - (external scripts)" \
 
@@ -322,11 +322,11 @@ case $mainmenu_selection in
 	#Backup menu ---------------------------------------------------------------------
 "backup")
 	backup_selection=$(
-		whiptail --title "Backup and Restore LMDS" --menu --notags \
+		whiptail --title "Backup and Restore Server" --menu --notags \
 			"While configuring rclone to work with Google Drive (option 12), make sure you give a folder name of (gdrive). Be carefull when you restore from backup. All containers will be stop and their settings overwritten with what is in your last backup file. All containers will start automatically after restore is done." 20 78 12 -- \
 			"rclone" "Install rclone and configure (gdrive) for backup" \
-			"rclone_backup" "Backup LMDS" \
-			"rclone_restore" "Restore LMDS" \
+			"rclone_backup" "Backup" \
+			"rclone_restore" "Restore" \
 			3>&1 1>&2 2>&3
 	)
 
