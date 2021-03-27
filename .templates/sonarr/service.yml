@@ -9,7 +9,7 @@
     volumes:
       - /home/pi/data/appdata/sonarr/data:/config
       - /home/pi/data/media/tvshows:/tv
-      - /home/pi/data/downloads:/downloads
+      - /home/pi/data/downloads/completed/TV:/downloads
     ports:
       - 8989:8989
     restart: unless-stopped
