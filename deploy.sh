@@ -17,7 +17,6 @@ declare -A cont_array=(
 	[plex]="Plex - Media manager"
 	[nginx]="Ngnix - Web Server"
 	[pihole]="Pi-Hole - Private DNS sinkhole"
-	[vpn]="vpn-client OpenVPN Gateway"
 )
 
 # CONTAINER keys
@@ -34,7 +33,6 @@ declare -a armhf_keys=(
 	"sabznbd"
 	"pihole"
 	"nginx"
-	"vpn"
 )
 
 sys_arch=$(uname -m)
@@ -55,11 +53,11 @@ timezones() {
 docker_setfacl() {
 	[ -d ./services ] || mkdir ./services
 	[ -d ./volumes ] || mkdir ./volumes
-	[ -d ./LMDSBackups ] || mkdir ./LMDSBackups
+	[ -d ./Backups ] || mkdir ./Backups
 
 	#give current user rwx on the volumes and backups
 	[ $(getfacl ./volumes | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx ./volumes
-	[ $(getfacl ./LMDSBackups | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx ./LMDSBackups
+	[ $(getfacl ./Backups | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx ./Backups
 }
 
 #future function add password in build phase
