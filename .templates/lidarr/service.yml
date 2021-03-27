@@ -4,11 +4,11 @@
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=America/Los_Angeles
       - UMASK_SET=022 #optional
     volumes:
-      - /home/pi/data/appdata/lidarr/config:/config
-      - /home/pi/data/media/music:/music
-      - /home/pi/data/downloads/completed/Music:/downloads
+      - .volumes/lidarr/config:/config
+      - .media/music:/music
+      - .downloads/completed/Music:/downloads
     ports:
       - 8686:8686
