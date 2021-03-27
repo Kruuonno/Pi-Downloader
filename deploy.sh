@@ -45,9 +45,9 @@ timezones() {
 # This function creates the volumes, services and backup directories.
 # It then assisgns the current user to the ACL to give full read write access
 docker_setfacl() {
-	[ -d ./services ] || sudo mkdir /home/pi/data/services
-	[ -d ./volumes ] || sudo mkdir /home/pi/data/volumes
-	[ -d ./Pi-Downloader-Backups ] || sudo mkdir /home/pi/data/Pi-Downloader-Backups
+	[ -d ./services ] || mkdir /home/pi/data/services
+	[ -d ./volumes ] || mkdir /home/pi/data/volumes
+	[ -d ./Pi-Downloader-Backups ] || mkdir /home/pi/data/Pi-Downloader-Backups
 
 	#give current user rwx on the volumes and backups
 	[ $(getfacl /home/pi/data/volumes | grep -c "default:user:$USER") -eq 0 ] && sudo setfacl -Rdm u:$USER:rwx /home/pi/data/volumes
@@ -75,7 +75,7 @@ function yml_builder() {
 
 	service="services/$1/service.yml"
 
-	[ -d ./services/ ] || sudo mkdir /home/pi/data/services/
+	[ -d ./services/ ] || mkdir /home/pi/data/services/
 
 		if [ -d /home/pi/data/services/$1 ]; then
 			#directory already exists prompt user to overwrite
