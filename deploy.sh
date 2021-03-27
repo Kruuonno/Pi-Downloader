@@ -164,10 +164,10 @@ fi
 mainmenu_selection=$(whiptail --title "Main Menu" --menu --notags \
 	"" 20 78 12 -- \
 	"install" "Install Docker" \
-	"build" "Build LMDS Stack" \
+	"build" "Build Docker Stack" \
 	"commands" "Docker commands" \
 	"misc" "Miscellaneous commands" \
-	"update" "Update LMDS Stack" \
+	"update" "Update Docker Stack" \
 	"backup" "Backup and Restore LMDS" \
 	3>&1 1>&2 2>&3)
 # "backup" "Backup LMDS - (external scripts)" \
@@ -283,7 +283,9 @@ case $mainmenu_selection in
 	docker_selection=$(
 		whiptail --title "Docker commands" --menu --notags \
 			"Shortcut to common docker commands" 20 78 12 -- \
-			"aliases" "Add LMDS_up and LMDS_down aliases" \
+			"usb" "USB HDD - dev/sdb2" \
+			"update-upgradeOS" "Upgrade OS" \
+			"aliases" "Add Docker_up and Docker_down aliases" \
 			"start" "Start stack" \
 			"restart" "Restart stack" \
 			"stop" "Stop stack" \
@@ -295,6 +297,8 @@ case $mainmenu_selection in
 	)
 
 	case $docker_selection in
+	"usb") ./scripts/usb-mount.sh;;
+	"update-upgradeOS") ./scripts/updateOS.sh;;
 	"start") ./scripts/start.sh ;;
 	"stop") ./scripts/stop.sh ;;
 	"stop_all") ./scripts/stop-all.sh ;;
