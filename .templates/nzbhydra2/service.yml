@@ -1,6 +1,3 @@
----
-version: "2.1"
-services:
   nzbhydra2:
     image: ghcr.io/linuxserver/nzbhydra2
     container_name: nzbhydra2
