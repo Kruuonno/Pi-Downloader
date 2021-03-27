@@ -6,8 +6,8 @@
       - PGID=1000
       - TZ=America/Los_Angeles
     volumes:
-      - /home/pi/data/appdata:/config
-      - /home/pi/data/downloads:/downloads
+      - ./volumes/nzbhydra2/config:/config
+      - ./downloads:/downloads
     ports:
       - 5076:5076
     restart: unless-stopped
