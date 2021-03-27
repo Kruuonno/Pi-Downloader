@@ -6,8 +6,8 @@
       - PGID=1000
       - TZ=America/Los_Angeles
     volumes:
-      - /home/pi/data/appdata/nzbget/config:/config
-      - /home/pi/data/downloads:/downloads
+      - ./volumes/nzbget/config:/config
+      - ./downloads:/downloads
     ports:
       - 6789:6789
     restart: unless-stopped
