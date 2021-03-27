@@ -10,6 +10,7 @@ declare -A cont_array=(
 	[sonarr]="Sonarr"
 	[radarr]="Radarr"
 	[lidarr]="Lidarr"
+	[nzbhydra2]="NZBHydra2"
 	[bazarr]="Bazarr"
 	[transmission]="Transmission - Torrent Client"
 	[nzbget]="NZBGet - Usenet groups client"
@@ -23,6 +24,7 @@ declare -a armhf_keys=(
 	"radarr"
 	"lidarr"
 	"bazarr"
+	"nzbhydra2"
 	"transmission"
 	"nzbget"
 )
