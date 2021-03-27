@@ -6,4 +6,4 @@
       - 9000:9000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/pi/data/appdata/portainer:/data
+      - ./volumes/portainer/data:/data
