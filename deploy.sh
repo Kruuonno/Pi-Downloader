@@ -77,7 +77,7 @@ function yml_builder() {
 
 	[ -d .services/ ] || mkdir /home/pi/data/services/
 
-		if [ -d /home/pi/data/services/$1 ]; then
+		if [ -d .services/$1 ]; then
 			#directory already exists prompt user to overwrite
 			sevice_overwrite=$(whiptail --radiolist --title "Deployment Option" --notags \
 				"$1 was already created before, use [SPACEBAR] to select redeployment configuation" 20 78 12 \
