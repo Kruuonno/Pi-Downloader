@@ -7,9 +7,9 @@
       - TZ=America/Los_Angeles
       - UMASK_SET=022 #optional
     volumes:
-      - /home/pi/data/appdata/radarr/config:/config
-      - /home/pi/data/media/movies:/movies
-      - /home/pi/data/downloads/completed/Movies:/downloads
+      - ./volumes/radarr/config:/config
+      - ./media/movies:/movies
+      - ./downloads/completed/Movies:/downloads
     ports:
       - 7878:7878
     restart: unless-stopped
