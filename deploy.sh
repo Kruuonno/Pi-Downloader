@@ -243,7 +243,7 @@ case $mainmenu_selection in
 		# store last sellection
 		[ -f /home/pi/data/services/selection.txt ] && rm /home/pi/data/services/selection.txt
 		#first run service directory wont exist
-		[ -d /home/pi/data/services ] || mkdir services
+		[ -d /home/pi/data/services ] || mkdir /home/pi/data/services
 		touch /home/pi/data/services/selection.txt
 		#Run yml_builder of all selected containers
 		for container in "${containers[@]}"; do
@@ -291,7 +291,7 @@ case $mainmenu_selection in
 	)
 
 	case $docker_selection in
-	"usb") sudo ./scripts/usb-mount.sh;;
+	"usb") ./scripts/usb-mount.sh;;
 	"update-upgradeOS") ./scripts/updateOS.sh;;
 	"start") ./scripts/start.sh ;;
 	"stop") ./scripts/stop.sh ;;
