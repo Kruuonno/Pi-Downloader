@@ -7,7 +7,7 @@
       - TZ=America/Los_Angeles
     volumes:
       - ./volumes/nzbhydra2/config:/config
-      - ./downloads:/downloads
+      - ./media/downloads:/downloads
     ports:
       - 5076:5076
     restart: unless-stopped
