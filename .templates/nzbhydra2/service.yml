@@ -7,7 +7,7 @@
       - TZ=America/Los_Angeles
     volumes:
       - ./volumes/nzbhydra2/config:/config
-      - ./media/downloads:/downloads
+      - /home/pi/data/Pi-Downloader/media/downloads:/downloads
     ports:
       - 5076:5076
     restart: unless-stopped
