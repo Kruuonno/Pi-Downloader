@@ -8,7 +8,7 @@
       - UMASK_SET=022 #optional
     volumes:
       - ./volumes/sonarr/data:/config
-      - ./media/tvshows:/tv
+      - /home/pi/Pi-Downloader/media/tvshows:/tv
       - /home/pi/Pi-Downloader/media/downloads/completed/tv:/downloads
     ports:
       - 8989:8989
