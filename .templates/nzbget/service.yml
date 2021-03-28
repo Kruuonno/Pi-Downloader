@@ -1,5 +1,5 @@
   nzbget:
-    image: taisun/nzbget-mod:latest
+    image: dtroncy/rpi-nzbget
     container_name: nzbget
     environment:
       - PUID=1000
