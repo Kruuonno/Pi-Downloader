@@ -7,7 +7,7 @@
       - TZ=America/Los_Angeles
     volumes:
       - ./volumes/nzbget/config:/config
-      - /home/pi/Pi-Downloader/media/downloads:/downloads
+      - /home/pi/data/Pi-Downloader/media/downloads:/downloads
     ports:
       - 6789:6789
     restart: unless-stopped
