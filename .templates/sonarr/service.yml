@@ -9,7 +9,7 @@
     volumes:
       - ./volumes/sonarr/data:/config
       - ./media/tvshows:/tv
-      - ./media/downloads/tv:/downloads
+      - ./media/downloads/completed/tv:/downloads
     ports:
       - 8989:8989
     restart: unless-stopped
