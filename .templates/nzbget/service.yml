@@ -1,5 +1,5 @@
   nzbget:
-    image: ghcr.io/linuxserver/nzbget
+    image: taisun/nzbget-mod:latest
     container_name: nzbget
     environment:
       - PUID=1000
