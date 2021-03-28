@@ -1,5 +1,5 @@
   nzbget:
-    image: dtroncy/rpi-nzbget
+    image: ghcr.io/linuxserver/nzbget
     container_name: nzbget
     environment:
       - PUID=1000
